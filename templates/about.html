@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="stylesheet" href="../static/about.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<font face="Arial">
+    <header class="site-header">
+        <button onclick="play(); setTimeout(function() { location.href='http://127.0.0.1:5000/cabinet'; }, 500);" class="image-button" type="button" formtarget="_blank">
+</button>
+        <audio id="audio" src="../static/click.mp3"></audio>
+
+        <nav class="navigation">
+            <div class="text1">
+                <a class="li1" style="color:white" onclick="play()" href="http://127.0.0.1:5000/home">Home</a>
+                <a class="li2" style="color:white" onclick="play()" href="http://127.0.0.1:5000/about">News</a>
+                <a class="li3" style="color:white" onclick="play()" href="http://127.0.0.1:5000/login">Login</a>
+                <a class="li3" style="color:white" onclick="play()" href="http://127.0.0.1:5000/register">Register</a>
+
+            </div>
+        </nav>
+    </header>
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6jHty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script>
+        function play() {
+        var audio = document.getElementById("audio");
+        audio.currentTime = 0;
+        audio.play();
+      }
+        const button = document.getElementById('soundButton');
+        const hoverSound = document.getElementById('hoverSound');
+
+        button.addEventListener('mouseenter', () => {
+            hoverSound.currentTime = 0; // Возвращает звук к началу
+            hoverSound.play();
+        });
+        function playSound() {
+    var sound = document.getElementById("clickSound");
+    sound.play();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('a');
+    const hoverSound = document.getElementById('hoverSound');
+
+    links.forEach(link => {
+        link.addEventListener('mouseover', () => {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        });
+    });
+});
+function playSound() {
+    var sound = document.getElementById("clickSound");
+    sound.currentTime = 0;  // Встановлює початок відтворення з самого початку
+    sound.play();
+}
+    </script>
+</font>
+</body>
+</html>

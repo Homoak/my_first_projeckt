@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.site-header .logo {
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.site-header .navigation {
+    float: right;
+}
+
+.site-header .navigation ul {
+    list-style-type: none;
+}
+
+.site-header .navigation ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.site-header .navigation ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.site-header .navigation ul li a:hover {
+    background-color: #555;
+    border-radius: 3px;
+}
+
+/* Убедитесь, что контент не скрывается за шапкой */
+main {
+    padding-top: 70px; /* Этот отступ должен быть равен высоте шапки */
+}
+
+nav ul li ul {
+    position: absolute;
+    width; 100px;
+    background: #aaa;
+    display: none;
+}
+
+nav ul li ul li{
+    width: 100%;
+    border; 1px solid rgba (0,0,0,.1);
+}
+
+nav ul li: hover > ul{
+    display: initial;
+}
+

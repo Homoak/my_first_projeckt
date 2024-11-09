@@ -1,0 +1,215 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+background-image: url('img1.jpg');
+}
+
+input:focus::placeholder {
+    opacity: 1;
+}
+
+.form {
+    width: 400px;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px #ff0000;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    background-image: url('img.jpg');
+    opacity: 0.9;
+}
+
+.form_title {
+    text-align: center;
+    margin: 0 0 16px 0;
+    font-width: normal;
+}
+
+.form_group {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.form_input,
+.enter {
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+form_label {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    color: #9e9e9e;
+    transition: 0.3s;
+}
+
+.form_input {
+    width: 100%;
+    padding: 0 0 10px 0;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: transparent;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-input:focus {
+    border-bottom: 1px solid #1a73a8;
+}
+
+.enter {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #e74c3c;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    animation: pulse 4s infinite;
+    transition: transform 0.3s ease;
+}
+
+.enter:focus,
+.enter:hover {
+    background-color: #c0392b;
+    transform: scale(1.1); /* Збільшує іконку на 10% при наведенні */
+}
+
+
+.form_input:focus ~ .form_label,
+.form_input:not(:placeholder ~ shown) ~ .form_label {
+    top: -18px;
+    font-size: 12px;
+    color: #e0e0e0;
+}
+
+.text {
+    font-size: 44px;
+    font-weight: bold;
+    font-family: Arial;
+    color: #13678a;
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.text:hover {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+    -webkit-mask-size: 200%;
+    animation: wave 1s infinite;
+    transform: scale(1.1);
+}
+
+@-webkit-keyframes wave {
+    from {
+        -webkit-mask-position: 150%;
+    }
+    to {
+        -webkit-mask-position: -50%;
+    }
+}
+
+.form_input {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial;
+    color: #13678a;
+    display: inline-block;
+    position: relative;
+}
+
+.form_input :hover {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+    -webkit-mask-size: 200%;
+    animation: wave 1s infinite;
+}
+
+@-webkit-keyframes wave {
+    from {
+        -webkit-mask-position: 150%;
+    }
+    to {
+        -webkit-mask-position: -50%;
+    }
+}
+
+        .flash-messages {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 500px;
+        }
+        .flash-message {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            transition: opacity 0.5s ease-out;
+        }
+        .flash-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .flash-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .flash-message.hidden {
+            opacity: 0;
+        }
+
+.flash-message {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.flash-message.visible {
+    opacity: 1;
+}
+
+.flash-message.hidden {
+    opacity: 0;
+}
+
+.enter:disabled {
+ background-color: #cccccc;
+ box-shadow: none;
+ cursor: not-allowed;
+animation: none; /* Відсутність анімації для неактивної кнопки */
+    transform: none;
+ }
+
+ .enter:disabled:hover {
+background-color: #aaaaaa;
+ }
+
+ @keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Збільшення кнопки на 10% */
+    }
+}
+
+.enter1 {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #e74c3c;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    transition: transform 0.3s ease;
+}
+.enter1:focus,
+.enter1:hover {
+    background-color: #c0392b;
+    transform: scale(1.1); /* Збільшує іконку на 10% при наведенні */
+}

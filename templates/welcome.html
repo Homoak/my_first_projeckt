@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="../static/welcome.css">
+</head>
+<body>
+<div class="container">
+    <h1 align="center" class="neonText">Hello Random User!</h1>
+</div>
+<div class="particle-button">
+    <!-- Додаємо функцію `play()` до атрибута `onclick` кнопки -->
+    <button onclick="play(); setTimeout(function() { location.href='http://127.0.0.1:19019/index'; }, 500);"
+            class="particle-button" id="particleButton">Click Me!
+    </button>
+    <!-- Плеєр аудіофайлу -->
+    <audio id="audio" src="../static/click.mp3"></audio>
+</div>
+<div class="particle-container" id="particleContainer"></div>
+
+<script>
+    // Функція для відтворення звуку
+    function play() {
+        const audio = document.getElementById("audio");
+        audio.play();
+    }
+
+    // Обробник для генерації частинок при натисканні на кнопку
+    document.getElementById('particleButton').addEventListener('click', () => {
+        const particleContainer = document.getElementById('particleContainer');
+        const button = document.getElementById('particleButton');
+        const rect = button.getBoundingClientRect();
+
+        // Кількість частинок
+        const particleCount = 30;
+
+        // Генерація частинок
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+
+            // Випадковий кут і дистанція
+            const angle = Math.random() * 2 * Math.PI; // Випадковий кут
+            const distance = Math.random() * 100 + 50; // Випадкова дистанція
+
+            // Задання CSS-змінних для анімації
+            particle.style.setProperty('--x', `${Math.cos(angle) * distance}px`);
+            particle.style.setProperty('--y', `${Math.sin(angle) * distance}px`);
+
+            // Початкова позиція (центр кнопки)
+            particle.style.left = `${rect.left + rect.width / 2}px`;
+            particle.style.top = `${rect.top + rect.height / 2}px`;
+
+            // Додавання частинки до контейнера
+            particleContainer.appendChild(particle);
+
+            // Видалення частинки після анімації
+            particle.addEventListener('animationend', () => {
+                particleContainer.removeChild(particle);
+            });
+        }
+    });
+
+    // Функція для генерації частинок кожні 100 мс
+    setInterval(() => createParticles(10), 100);
+
+    // Функція для створення частинок
+    function createParticles(count) {
+        const particleContainer = document.getElementById('particleContainer');
+        const button = document.getElementById('particleButton');
+
+        for (let i = 0; i < count; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+
+            // Випадковий кут і дистанція
+            const angle = Math.random() * 2 * Math.PI; // Випадковий кут
+            const distance = Math.random() * 300 + 100; // Зменшена дистанція для сповільнення
+
+            // Задання CSS-змінних для анімації
+            particle.style.setProperty('--x', `${Math.cos(angle) * distance}px`);
+            particle.style.setProperty('--y', `${Math.sin(angle) * distance}px`);
+
+            // Отримуємо позицію кнопки
+            const rect = button.getBoundingClientRect();
+
+            // Початкова позиція (центр кнопки)
+            particle.style.left = `${rect.left + rect.width / 2}px`;
+            particle.style.top = `${rect.top + rect.height / 2}px`;
+
+            // Додавання частинки до контейнера
+            particleContainer.appendChild(particle);
+
+            // Видалення частинки після анімації
+            particle.addEventListener('animationend', () => {
+                particleContainer.removeChild(particle);
+            });
+        }
+    }
+</script>
+
+</body>
+</html>

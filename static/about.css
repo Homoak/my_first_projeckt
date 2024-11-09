@@ -1,0 +1,90 @@
+body {
+    background-image: url('img1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.site-header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%; /* Ширина шапки */
+    max-width: 1200px; /* Максимальна ширина шапки */
+    background-color: #333;
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 1px 20px #ff0000;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 20px; /* Відступи всередині шапки */
+    align-items: center; /* Вирівнювання по центру */
+    justify-content: space-between; /* Логотип ліворуч, навігація праворуч */
+    background-image: url('img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    max-height: 60px; /* Висота в закритому стані */
+    transition: max-height 0.5s ease-out;
+
+}
+
+.site-header.open {
+    max-height: 200px; /* Висота в розкритому стані */
+}
+
+site-header.hidden {
+    height: 0;
+    overflow: hidden;
+    border: none;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 25px; /* Висота логотипа */
+    width: auto;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px; /* Відстань між кнопками */
+    margin: 0;
+    padding: 0;
+}
+
+.navigation ul li {
+    margin: 0;
+}
+
+.navigation ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 2px 6px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation ul li a:hover {
+    background-color: #555;
+    border-radius: 3px;
+}
+
+/* Упевніться, що контент не приховується за шапкою */
+main {
+    padding-top: 80px; /* Цей відступ має бути дорівнювати висоті шапки */
+}
+
+

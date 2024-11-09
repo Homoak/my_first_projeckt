@@ -1,0 +1,117 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('images/img1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial;
+}
+
+.particle-button {
+    background-color: #e74c3c; /* Яскраво-червоний колір */
+    color: #ffffff; /* Білий текст */
+    padding: 10x 15px; /* Менші внутрішні відступи */
+    border: none;
+    border-radius: 10px; /* Згладжені краї (менше округлення) */
+    font-size: 20px; /* Менший розмір шрифту */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавна зміна кольору */
+    height: 60px;
+    width: 140px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 1px 20px #ff0000;
+    z-index: 10;
+}
+
+.particle-button:hover {
+    background-color: #c0392b; /* Темніший червоний при наведенні */
+    transform: scale(1.1); /* Збільшує кнопку на 10% */
+
+}
+
+.particle-button:active {
+    background-color: #a93226; /* Темно-червоний при натисканні */
+}
+
+.particle-button:focus {
+    outline: none; /* Видалення рамки при фокусуванні */
+}
+
+.particle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    opacity: 0,2;
+    animation: particle-animation 5s ease forwards; /* Збільшено до 3s */
+}
+
+/* Анімація частинок */
+@keyframes particle-animation {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 0;
+    }
+}
+.neonText {
+  animation: flicker 1.5s infinite alternate;
+  color: #fff;
+}
+
+.neonText {
+  color: #fff;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #ff0000,
+      0 0 82px #ff0000,
+      0 0 92px #ff0000,
+      0 0 102px #ff0000,
+      0 0 151px #ff0000;
+}
+@keyframes flicker {
+
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #ff0000,
+      0 0 82px #ff0000,
+      0 0 92px #ff0000,
+      0 0 102px #ff0000,
+      0 0 151px #ff0000;
+  }
+
+  20%, 24%, 55% {
+      text-shadow: none;
+  }
+}
+
+.container {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin: -125px 0 0 -125px;
+}
