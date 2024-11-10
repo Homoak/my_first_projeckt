@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, g
 from werkzeug.security import generate_password_hash
 
 app = Flask(__name__)
-app.secret_key = '4f9f94c5e0b5708d03e495dec18e3eecfca48627b1e97218a286cf6aa6fd776f'
+app.secret_key = ''
 
 DATABASE = 'database.db'
 
