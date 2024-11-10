@@ -70,7 +70,7 @@ body {
     color: #fff;
     transform: rotateY(180deg);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-image: url('images/moon2.webp');
+            background-image: url('images/red.webp');
     background-repeat: no-repeat;
     background-size: cover;
 }
