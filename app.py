@@ -2,7 +2,9 @@ import sqlite3
 
 from flask import Flask, render_template, request, redirect, url_for, flash, g
 from werkzeug.security import generate_password_hash
-
+#===========================
+#imports
+#===========================
 app = Flask(__name__)
 app.secret_key = ''
 
